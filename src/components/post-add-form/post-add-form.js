@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./post-add-form.css";
+
 const PostAddForm = () => {
   return (
     <form className="bottom-panel d-flex">
@@ -8,7 +10,10 @@ const PostAddForm = () => {
         placeholder="О чем вы думаете сейчас?"
         className="form-control new-post-label"
       />
-      <button type="submit" className="btn btn-outline-secondary">
+      <button
+        type="submit"
+        className="btn btn-outline-secondary btn-post-add-form"
+      >
         Добавить
       </button>
     </form>

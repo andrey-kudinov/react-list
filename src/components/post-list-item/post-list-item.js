@@ -1,5 +1,7 @@
 import React from "react";
 
+import './post-list-item.css'
+
 const PostListItem = () => {
   return (
     <li className="app-list-item d-flex justify-content-between">
@@ -11,7 +13,7 @@ const PostListItem = () => {
         <button type="button" className="btn-trash btn-sm">
           <span className="material-icons">delete</span>
         </button>
-        <span className="material-icons">favorite</span>
+        <span className="material-icons fa-heart">favorite</span>
       </div>
     </li>
   );

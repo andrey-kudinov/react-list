@@ -1,0 +1,16 @@
+/* .app {
+  margin: 0 auto;
+  max-width: 800px;
+} */
+
+.app { 
+  display:grid;
+  grid-template-columns: 
+      [full-start] minmax(1em, 1fr)           
+      [main-start] minmax(0, 50rem)
+      [main-end] minmax(1em, 1fr)
+      [full-end]; 
+}
+.app > * {
+  grid-column: main;
+}
