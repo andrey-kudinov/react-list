@@ -7,6 +7,23 @@ import PostList from "../post-list";
 import PostAddForm from "../post-add-form/post-add-form";
 
 import './app.css';
+import styled from 'styled-components';
+
+const AppBlock = styled.div`
+    display:grid;
+    grid-template-columns: 
+        [full-start] minmax(1em, 1fr)           
+        [main-start] minmax(0, 50rem)
+        [main-end] minmax(1em, 1fr)
+        [full-end]; 
+  & * {
+    grid-column: main;
+  }
+`
+
+const StyledAppBlock = styled(AppBlock)`
+  padding-top: 20px
+`
 
 const App = () => {
 
@@ -17,7 +34,7 @@ const App = () => {
   ]
   
   return (
-    <div className="app">
+    <StyledAppBlock>
       <AppHeader />
       <div className="search-panel d-flex">
         <SearchPanel />
@@ -25,7 +42,7 @@ const App = () => {
       </div>
       <PostList posts={data}/>
       <PostAddForm />
-    </div>
+    </StyledAppBlock>
   );
 };
 

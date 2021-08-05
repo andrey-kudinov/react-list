@@ -8,3 +8,10 @@
   color: azure;
   border-color: azure;
 }
+
+.btn-info:focus {
+  color: #fff;
+  background-color:darkgray;
+  border-color: darkgray;
+  box-shadow: inset -1px 3px 8px 5px azure, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+}
