@@ -30,8 +30,8 @@
     font-size: 16px; */
     color: red;
     transition: 0.3s all;
-    transform: translateX(15px);
-    opacity: 1;
+    transform: translateX(30px);
+    opacity: 0;
 }
 
 .material-icons {
@@ -44,15 +44,16 @@
   cursor: pointer;
   user-select: none;
   transition: 0.5s all;
+  color: #d4b502
 }
 
 .app-list-item.like .fa-heart {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(10px);
 }
 
 .app-list-item.important .app-list-item-label {
-  color: #FFD700;
+  color: #aeaeae;
 }
 
 .app-list-item.important .btn-star {

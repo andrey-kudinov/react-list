@@ -1,0 +1,10 @@
+.btn-info {
+  background-color:gainsboro;
+  border-color: azure;
+}
+
+.btn-info:hover {
+  background-color: transparent;
+  color: azure;
+  border-color: azure;
+}
