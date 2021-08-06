@@ -11,4 +11,11 @@
 .btn-outline-secondary {
   color: azure;
   border-color: azure;
+  transition: .3 ease;
+}
+
+.btn-outline-secondary:hover {
+  color: darkslategray;
+  background-color:gainsboro;
+  border-color: gainsboro;
 }

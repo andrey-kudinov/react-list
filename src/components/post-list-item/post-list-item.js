@@ -3,50 +3,42 @@ import React, { Component } from "react";
 import "./post-list-item.css";
 
 export default class PostListItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      important: false,
-      like: false,
-    };
-    this.onImportant = this.onImportant.bind(this);
-    this.onLike = this.onLike.bind(this);
-  }
 
-  onImportant() {
-    this.setState(({ important }) => ({
-      important: !important,
-    }));
-  }
-
-  onLike() {
-    this.setState(({like}) => ({
-      like: !like,
-    }));
+  deleteAnimation(event) {
+    event.target.closest('.list-group-item').classList.add('deleted')
   }
 
   render() {
-    const { label } = this.props;
-    const { important, like } = this.state;
+    const { label, onDelete, onToggleImportant, onToggleLiked, important, like } = this.props;
     let classNames = "app-list-item d-flex justify-content-between";
-    if (important) {
+    if (!important) {
       classNames += " important";
     }
     if (like) {
-      classNames += ' like'
+      classNames += " like";
     }
+    
     return (
       <div className={classNames}>
-        <span className="app-list-item-label" onClick={this.onLike}>{label}</span>
+        <span className="app-list-item-label" onClick={onToggleLiked}>
+          {label}
+        </span>
         <div className="d0-flex justify-content align-items-center">
           <button
             type="button"
             className="btn-star btn-sm"
-            onClick={this.onImportant}
+            onClick={onToggleImportant}
           >
             <span className="material-icons">grade</span>
           </button>
-          <button type="button" className="btn-trash btn-sm">
+          <button
+            type="button"
+            className="btn-trash btn-sm"
+            onClick={(event) => {
+              onDelete();
+              this.deleteAnimation(event);
+            }}
+          >
             <span className="material-icons">delete</span>
           </button>
           <span className="material-icons fa-heart">favorite</span>
